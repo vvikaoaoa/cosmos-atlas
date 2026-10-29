@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — Космический атлас</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Космический атлас</h1>
+
+    <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>Каталог космических открыток</h2>
+    <p>Выберите категорию и добавьте открытки в корзину.</p>
+
+    <label for="category-filter">Показать:</label>
+    <select id="category-filter">
+        <option value="all">Все планеты</option>
+        <option value="terrestrial">Планеты земной группы</option>
+        <option value="gas">Газовые гиганты</option>
+    </select>
+
+    <div class="catalog-list">
+        <div class="product" data-category="terrestrial">
+            <h3>Открытка «Земля»</h3>
+            <img src="images/thumbs/earth.png" alt="Земля" width="190">
+            <p>Цена: 150 руб.</p>
+            <p><a href="earth.html">Подробнее о Земле</a></p>
+            <button class="add-button" data-name="Открытка «Земля»" data-price="150">Добавить в корзину</button>
+        </div>
+
+        <div class="product" data-category="terrestrial">
+            <h3>Открытка «Марс»</h3>
+            <img src="images/thumbs/mars.png" alt="Марс" width="190">
+            <p>Цена: 160 руб.</p>
+            <p><a href="mars.html">Подробнее о Марсе</a></p>
+            <button class="add-button" data-name="Открытка «Марс»" data-price="160">Добавить в корзину</button>
+        </div>
+
+        <div class="product" data-category="gas">
+            <h3>Открытка «Сатурн»</h3>
+            <img src="images/thumbs/saturn.png" alt="Сатурн" width="190">
+            <p>Цена: 180 руб.</p>
+            <p><a href="saturn.html">Подробнее о Сатурне</a></p>
+            <button class="add-button" data-name="Открытка «Сатурн»" data-price="180">Добавить в корзину</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Корзина</h2>
+    <ul id="cart-list"></ul>
+    <p id="total">Итого: 0 руб.</p>
+    <button id="clear-button">Очистить корзину</button>
+    <button id="pay-button">Оплатить</button>
+    <p><small>Это учебная корзина. Реальная оплата не производится.</small></p>
+
+    <hr>
+    <p id="footer">&copy; 2026 Космический атлас. Все права защищены.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

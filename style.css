@@ -1,0 +1,126 @@
+/* Стили сайта «Космический атлас». Практическая работа № 3 */
+
+/* Общий фон и шрифт */
+body {
+    background-color: rgb(239, 246, 250);
+    color: rgb(40, 50, 60);
+    font-family: Arial, sans-serif;
+    margin: 25px 35px;
+}
+
+h1 {
+    color: rgb(37, 79, 118);
+    font-size: 28px;
+}
+
+h2 {
+    color: rgb(37, 79, 118);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgb(163, 181, 196);
+}
+
+/* Меню на всех страницах */
+.menu {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.menu a {
+    color: rgb(32, 91, 150);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Подзаголовки на страницах планет */
+.product-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: rgb(216, 231, 241);
+    padding: 6px;
+}
+
+/* Краткое описание */
+.short-description {
+    color: rgb(76, 104, 134);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+/* Подробное описание */
+.full-description {
+    color: rgb(46, 61, 75);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+/* Характеристики со значками вместо обычных маркеров */
+.features {
+    list-style-image: url("images/star-marker.png");
+    color: rgb(44, 79, 112);
+    font-size: 15px;
+    background-color: rgb(231, 240, 247);
+    padding: 10px 10px 10px 35px;
+    max-width: 540px;
+}
+
+.features li {
+    margin-bottom: 6px;
+}
+
+/* Пример селектора атрибута: ссылки с target="_blank" */
+a[target="_blank"] img {
+    border: 1px solid rgb(140, 164, 183);
+}
+
+/* Подвал: селектор по идентификатору */
+#footer {
+    color: rgb(93, 101, 110);
+    font-size: 13px;
+}
+
+/* Несложное оформление каталога для практической работы № 3 */
+.catalog-list {
+    margin-top: 14px;
+}
+
+.product {
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 18px;
+}
+
+.product h3 {
+    font-size: 18px;
+}
+
+button, select {
+    font-size: 14px;
+    padding: 5px;
+}
+
+#cart-list li {
+    margin-bottom: 8px;
+}
+
+#total {
+    font-weight: bold;
+}
