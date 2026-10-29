@@ -1,0 +1,62 @@
+ПРАКТИЧЕСКАЯ РАБОТА № 4. ПУБЛИКАЦИЯ В GITHUB
+
+Код и локальная история Git подготовлены. Публикация на GitHub выполняется
+из вашего аккаунта: нужны доступ к GitHub и авторизация через Git/GitHub.
+
+ЧТО УЖЕ ЕСТЬ В ПРИЛОЖЕННОМ ПРОЕКТЕ
+- ветка main с версией работы № 3;
+- ветка feature/localstorage с изменением script.js;
+- локальный merge в main (git merge --no-ff feature/localstorage).
+- демонстрационная подпись старых коммитов «Учебный пример».
+Фактической публикации в GitHub ещё НЕ было.
+
+ПОШАГОВО: ПУБЛИКАЦИЯ ГОТОВОЙ ИСТОРИИ
+1. Установите Git for Windows: https://git-scm.com/downloads/win
+2. Распакуйте проект на компьютер.
+3. Откройте папку Космический_атлас в VS Code; Terminal → New Terminal.
+   Если terminal — PowerShell, команды Git работают там тоже.
+4. Выполните:
+   git status
+   git branch
+   git log --oneline --graph --all
+   Должны быть ветки main и feature/localstorage, три коммита.
+5. На github.com нажмите New repository, имя cosmos-atlas, Public или Private.
+   НЕ отмечайте Add a README / .gitignore / license (пустой репозиторий).
+6. Скопируйте HTTPS-адрес созданного репозитория и выполните:
+   git remote add origin https://github.com/ВАШ_ЛОГИН/cosmos-atlas.git
+   git push -u origin main
+   git push -u origin feature/localstorage
+7. При необходимости авторизуйтесь в GitHub по запросу Git.
+8. Откройте репозиторий на GitHub: проверьте файлы, историю коммитов
+   и наличие ветки feature/localstorage в переключателе веток.
+9. Занесите ссылку репозитория в PDF-отчёт; сделайте собственные
+   скриншоты GitHub и приложите их, если преподаватель требует доказательства.
+
+ЕСЛИ ХОТИТЕ САМИ ПОВТОРИТЬ ПОСЛЕДОВАТЕЛЬНОСТЬ С НУЛЯ
+Скопируйте проект БЕЗ папки .git в новый каталог.
+В новом каталоге скопируйте script.js из ПР-3 вместо текущего и затем:
+   git init
+   git branch -M main
+   git config user.name "Ваше Имя"
+   git config user.email "ваша_почта@example.com"
+   git add .
+   git commit -m "Initial commit (Практическая 3)"
+   git checkout -b feature/localstorage
+Затем перенесите в script.js вариант из этой ПР-4 и выполните:
+   git add .
+   git commit -m "Добавлено сохранение корзины в LocalStorage"
+   git remote add origin https://github.com/ВАШ_ЛОГИН/cosmos-atlas.git
+   git push -u origin main
+   git push -u origin feature/localstorage
+   git checkout main
+   git merge feature/localstorage
+   git push origin main
+Этот второй вариант показывает все действия самостоятельно.
+
+ЕСЛИ GIT ПИШЕТ: remote origin already exists
+   git remote -v
+   git remote set-url origin https://github.com/ВАШ_ЛОГИН/cosmos-atlas.git
+
+ЕСЛИ ПРИ РАСПАКОВКЕ ПОТЕРЯЛАСЬ ПАПКА .git
+Скопируйте проект без .git и используйте описанный выше порядок с нуля.
+Ссылка на GitHub и факт публикации не могут быть заполнены заранее.
