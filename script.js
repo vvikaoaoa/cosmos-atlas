@@ -1,7 +1,23 @@
-// Практическая работа № 3. Простая корзина и фильтр.
+// Практическая работа № 4. Корзина, фильтр и LocalStorage.
 
-// В массиве хранятся выбранные товары и их цены.
+// Массив корзины. При открытии каталога читаем сохранённые данные.
 let cart = [];
+const savedCart = localStorage.getItem("cart");
+if (savedCart) {
+    try {
+        const data = JSON.parse(savedCart);
+        if (Array.isArray(data)) {
+            cart = data;
+        }
+    } catch (error) {
+        cart = [];
+    }
+}
+
+// Сохраняем корзину в браузере в виде строки JSON.
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
 
 const buttons = document.querySelectorAll(".add-button");
 const products = document.querySelectorAll(".product");
@@ -32,6 +48,7 @@ const renderCart = () => {
         removeButton.textContent = "Удалить";
         removeButton.addEventListener("click", () => {
             cart.splice(index, 1);
+            saveCart();
             renderCart();
         });
 
@@ -50,6 +67,7 @@ buttons.forEach((button) => {
             price: Number(button.dataset.price)
         };
         cart.push(product);
+        saveCart();
         renderCart();
     });
 });
@@ -68,6 +86,7 @@ filter.addEventListener("change", () => {
 // Очистка всей корзины.
 clearButton.addEventListener("click", () => {
     cart = [];
+    saveCart();
     renderCart();
 });
 
@@ -78,6 +97,7 @@ payButton.addEventListener("click", () => {
     } else {
         alert("Покупка прошла успешно!");
         cart = [];
+        saveCart();
         renderCart();
     }
 });
